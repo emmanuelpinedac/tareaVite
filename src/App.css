@@ -14,12 +14,21 @@
     #8b4cff 100%
   );
 }
+#titulo {
+  font-size: 70px;
+}
 #contenedor2 {
   display: flex;
   flex-direction: row;
 }
 
-#cformulario{
+img {
+  width: 100%;
+  border-radius: 2em;
+  padding: 1em;
+}
+
+#cformulario {
   width: 50%;
   height: 700px;
   margin: 20px;
@@ -27,7 +36,7 @@
   border-radius: 1em;
   padding: 2em;
 }
-#ctarjetas{
+#ctarjetas {
   width: 50%;
   height: auto;
   margin: 20px;
