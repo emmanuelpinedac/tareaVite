@@ -1,7 +1,11 @@
-
 import "./tarjeta.css";
 
-export default function Tarjeta({ cita }) {
+export default function Tarjeta({ cita, eliminarCita: eliminar }) {
+
+  const eliminarCita = () => {
+    eliminar(cita.nombreMascota);
+  };
+
   return (
     <div id="tarjeta">
       <p>
@@ -19,6 +23,9 @@ export default function Tarjeta({ cita }) {
       <p>
         <strong>Síntomas:</strong> {cita.sintomas}
       </p>
+      <div id="deleteContainer">
+        <button onClick={eliminarCita}>Eliminar</button>
+      </div>
     </div>
   );
 }

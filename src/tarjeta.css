@@ -6,3 +6,8 @@
   border-radius: 1em;
   font-size: 20px;
 }
+
+#deleteContainer {
+  display: flex;
+  justify-content: center;
+}
