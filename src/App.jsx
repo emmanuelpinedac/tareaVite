@@ -11,6 +11,7 @@ function App() {
       fecha: new Date().toString(),
       hora: new Date().getTime().toString(),
       sintomas: "Le duele la panza",
+      imagen: "https://picsum.photos/200",
     },
     {
       nombreMascota: "Lolo",
@@ -18,6 +19,7 @@ function App() {
       fecha: new Date().toString(),
       hora: new Date().getTime().toString(),
       sintomas: "Le duele la panza",
+      imagen: "https://picsum.photos/200",
     },
     {
       nombreMascota: "Lili",
@@ -25,14 +27,9 @@ function App() {
       fecha: new Date().toString(),
       hora: new Date().getTime().toString(),
       sintomas: "Le duele la panza",
+      imagen: "https://picsum.photos/200",
     },
-    {
-      nombreMascota: "Lele",
-      nombreDueño: "Lolo",
-      fecha: new Date().toString(),
-      hora: new Date().getTime().toString(),
-      sintomas: "Le duele la panza",
-    },
+
   ]);
 
   const eliminarCita = (nombreMascota) => {
@@ -40,11 +37,10 @@ function App() {
     //   (cita) => cita.nombreMascota !== nombreMascota
     // );
 
-    const nuevasCitas = citas.reduce(((acc, cita) => {
-      if(cita.nombreMascota === nombreMascota) return acc;
+    const nuevasCitas = citas.reduce((acc, cita) => {
+      if (cita.nombreMascota === nombreMascota) return acc;
       return [...acc, cita];
-    }), []);
-
+    }, []);
 
     setCitas(nuevasCitas);
   };
@@ -52,22 +48,28 @@ function App() {
   return (
     <div className="container-fluid" id="contenedor">
       <br />
+      <hr />
       <br />
-      <br />
+
       <h1 className="text-center">
         <strong id="titulo">ADMINISTRADOR DE PACIENTES</strong>
       </h1>
 
       <div id="contenedor2">
         <div id="cformulario">
-          <h1 className="text-center">CREAR CITA</h1>
+          <h1 className="text-center">AGREGAR CITA</h1>
+
           {/* aqui va el componente formulario */}
           <Form citas={citas} setCitas={setCitas} />
         </div>
         <div id="ctarjetas">
-          <h1 className="text-center">ADMINISTRAR CITAS</h1>
-          {/* aqui va el componente tarjeta */}
+          {citas.length ? (
+            <h1 className="text-center">ADMINISTRAR CITAS</h1>
+          ) : (
+            <h1 className="text-center">NO HAY CITAS</h1>
+          )}
 
+          {/* aqui va el componente tarjeta */}
           {citas.map((cita) => (
             <Tarjeta id="tarjeta" cita={cita} eliminarCita={eliminarCita} />
           ))}

@@ -22,11 +22,10 @@
   flex-direction: row;
 }
 
-img {
-  width: 100%;
-  border-radius: 2em;
-  padding: 1em;
+hr{
+  size: 30px;
 }
+
 
 #cformulario {
   width: 50%;
@@ -38,9 +37,10 @@ img {
 }
 #ctarjetas {
   width: 50%;
-  height: auto;
   margin: 20px;
   border: solid;
   border-radius: 1em;
   padding: 2em;
+  max-height: 700px;
+  overflow-y: scroll;
 }
