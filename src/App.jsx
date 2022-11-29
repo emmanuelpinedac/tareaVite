@@ -4,33 +4,7 @@ import Tarjeta from "./Tarjeta";
 import Form from "./Form";
 
 function App() {
-  const [citas, setCitas] = useState([
-    {
-      nombreMascota: "Lala",
-      nombreDueño: "Lolo",
-      fecha: new Date().toString(),
-      hora: new Date().getTime().toString(),
-      sintomas: "Le duele la panza",
-      imagen: "https://picsum.photos/200",
-    },
-    {
-      nombreMascota: "Lolo",
-      nombreDueño: "Lolo",
-      fecha: new Date().toString(),
-      hora: new Date().getTime().toString(),
-      sintomas: "Le duele la panza",
-      imagen: "https://picsum.photos/200",
-    },
-    {
-      nombreMascota: "Lili",
-      nombreDueño: "Lolo",
-      fecha: new Date().toString(),
-      hora: new Date().getTime().toString(),
-      sintomas: "Le duele la panza",
-      imagen: "https://picsum.photos/200",
-    },
-
-  ]);
+  const [citas, setCitas] = useState([]);
 
   const eliminarCita = (nombreMascota) => {
     // const nuevasCitas = citas.filter(
